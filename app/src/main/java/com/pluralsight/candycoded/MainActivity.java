@@ -81,20 +81,18 @@ public class MainActivity extends AppCompatActivity {
     return true;
   }
 
-  // ***
-  // TODO - Task 1 - Show Store Information Activity
+
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case R.id.info:
-        startActivity(new Intent(this, InfoActivity.class));
+        Intent infoIntent =new Intent(this, InfoActivity.class);
+        startActivity(infoIntent);
         return true;
       default:
         return super.onOptionsItemSelected(item);
     }
   }
-  // ***
-
   private void addCandiesToDatabase(Candy[] candies) {
     SQLiteDatabase db = candyDbHelper.getWritableDatabase();
 
